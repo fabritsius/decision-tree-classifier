@@ -20,4 +20,4 @@ predictions = clf.predict(questions)
 
 print('\nPredictions:')
 for i, prediction in enumerate(predictions):
-	print(questions[i], prediction)
+    print(questions[i], prediction)
