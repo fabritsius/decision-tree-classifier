@@ -8,6 +8,10 @@ class DecisionTreeClassifier():
 			predict(X) – use.
 	"""
 	def __init__(self, tree=None):
+		""" __init__() method.
+			Parameters:
+				tree – (optional) pretrained tree.
+		"""
 		self.tree = tree
 
 	def fit(self, X, Y):
@@ -95,6 +99,9 @@ class DecisionTreeClassifier():
 		predictions = []
 		for x in X:
 			current = self.tree
+			# check if the model was trained.
+			if not current:
+				raise ValueError('Decision Tree is missing.\nTo train the model use .fit() method.')	
 			while True:
 				b = current[0]
 				if isinstance(b, tuple):
